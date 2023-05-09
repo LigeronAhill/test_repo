@@ -1,4 +1,4 @@
-def remove_duplicates(input_nums: list[int]) -> int:
+def remove_duplicates(nums: list[int]) -> int:
     """
     Given an integer array nums sorted in non-decreasing order,
     remove the duplicates in-place such that each unique element
@@ -8,16 +8,22 @@ def remove_duplicates(input_nums: list[int]) -> int:
     Consider the number of unique elements of nums to be k, to get
     accepted, you need to do the following things:
 
-    - Change the array nums such that the first k elements of nums
+    1. Change the array nums such that the first k elements of nums
     contain the unique elements in the order they were present in nums
     initially. The remaining elements of nums are not important as well
     as the size of nums.
 
-    - Return k.
-    :param input_nums: integer array sorted in non-decreasing order
+    2. Return k.
+    :param nums: integer array sorted in non-decreasing order
     :return: the number of unique elements in nums.
     """
-    return 0
+    k = set(nums)
+    k = list(k)
+    k.sort()
+
+    for i in range(len(k)):
+        nums[i] = k[i]
+    return len(k)
 
 
 nums1 = [1, 1, 2]
@@ -35,9 +41,9 @@ nums is sorted in non-decreasing order.
 
 def test(nums, output):
     if remove_duplicates(nums) == output:
-        print("test - ok")
+        print("test - ok", nums)
     else:
-        print("Test failed")
+        print("Test failed", nums)
 
 
 test(nums1, output_1)
