@@ -51,3 +51,4 @@ def test(word1, word2, res):
 test("abc", "pqr", "apbqcr")
 test("ab", "pqrs", "apbqrs")
 test("abcd", "pq", "apbqcd")
+# zip function is better...
