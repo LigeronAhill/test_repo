@@ -28,10 +28,12 @@ def move_zeroes(nums: list[int]):
     :param nums: list[int]
     :return:None
     """
-    for i in range(nums.count(0)):
-        nums.remove(0)
-        nums.append(0)
-    # return None
+    # for i in range(nums.count(0)):
+    #     nums.remove(0)
+    #     nums.append(0)
+    # # return None
+    # return nums
+    nums[:] = [n for n in nums if n != 0] + [0]*nums.count(0)
     return nums
 
 
