@@ -18,12 +18,20 @@ def test():
 
 
 def increasing_triplet(nums: list) -> bool:
-    return True
+    first = second = float('inf')
+    for num in nums:
+        if num <= first:
+            first = num
+        elif num <= second:
+            second = num
+        else:
+            return True
+    return False
 
 
-example_1 = [1, 2, 3, 4, 5]
+example_1 = [20, 100, 10, 12, 5, 13]
 example_2 = [5, 4, 3, 2, 1]
-example_3 = [2,1,5,0,4,6]
+example_3 = [2, 1, 5, 0, 4, 6]
 
 if __name__ == "__main__":
     main()
