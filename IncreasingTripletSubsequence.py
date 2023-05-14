@@ -18,6 +18,13 @@ def test():
 
 
 def increasing_triplet(nums: list) -> bool:
+    """
+    Given an integer array nums, return true if there exists a triple of indices
+    (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]. If no such
+    indices exists, return false.
+    :param nums: list[int]
+    :return: bool
+    """
     first = second = float('inf')
     for num in nums:
         if num <= first:
