@@ -28,7 +28,9 @@ def move_zeroes(nums: list[int]):
     :param nums: list[int]
     :return:None
     """
-
+    for i in range(nums.count(0)):
+        nums.remove(0)
+        nums.append(0)
     # return None
     return nums
 
