@@ -33,7 +33,13 @@ def move_zeroes(nums: list[int]):
     #     nums.append(0)
     # # return None
     # return nums
-    nums[:] = [n for n in nums if n != 0] + [0]*nums.count(0)
+    # nums[:] = [n for n in nums if n != 0] + [0]*nums.count(0)
+    # return nums
+    b = 0
+    for a in range(len(nums)):
+        if nums[a] != 0:
+            nums[a], nums[b] = nums[b], nums[a]
+            b += 1
     return nums
 
 
